@@ -19,6 +19,7 @@ void setup() {
 void loop() {
   if (Serial.available()) {
     x = Serial.read();
+  }
     if (x == 'R' || digitalRead(switch2) == HIGH) {
       analogWrite(motor2, analogRead(pot1));
     }else if(x == 'L' || digitalRead(switch1) == HIGH){
@@ -28,4 +29,4 @@ void loop() {
       digitalWrite(motor2, LOW);
     }
   }
-}
+
